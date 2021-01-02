@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jmcph4.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jmcph4.dev/" rel="alternate" type="text/html" /><updated>2021-01-01T22:23:47+10:00</updated><id>https://jmcph4.dev/feed.xml</id><title type="html">Disciple of Dawn</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Pre-Print Saturday #2: 16 May 2020</title><link href="https://jmcph4.dev/2020/05/16/pre-print-saturday-2.html" rel="alternate" type="text/html" title="Pre-Print Saturday #2: 16 May 2020" /><published>2020-05-16T10:45:00+10:00</published><updated>2020-05-16T10:45:00+10:00</updated><id>https://jmcph4.dev/2020/05/16/pre-print-saturday-2</id><content type="html" xml:base="https://jmcph4.dev/2020/05/16/pre-print-saturday-2.html">&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06093&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Stabilizing Congestion in Decentralized Record-Keepers&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/stabilizing-congestion-in-decentralized-record-keepers&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors present a proposal for a distributed ledger system and accompanying payment system that leverages recent advancements in both PoW consensus and formal verification. The authors also present a formal economic model of their protocol design. Of particular interest is that their proposed system reaches stability in the absence of block rewards - relying solely on transaction fees to maintain consensus.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.05521&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;A Difficulty in Controlling Blockchain Mining Costs via Cryptopuzzle Difficulty&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/a-difficulty-in-controlling-blockchain-mining-costs-via-cryptopuzzle-difficulty&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors model PoW mining as an all-pay auction and prove several properties of the auction's allocation function.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06580&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Practical Hash-based Anonymity for MAC Addresses&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/practical-hash-based-anonymity-for-mac-addresses&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors present a viable method for anonymising MAC addresses through hashing. They improve on previous work using a hash-based strategy by using more expensive hash functions and ensuring \(k\)-bit anonymity.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06665&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Scaling Blockchains Without Giving up Decentralization and Security&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/scaling-blockchains-without-giving-up-decentralization-and-security&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors present what they consider to be a blockchain design that escapes the so-called blockchain trilemma by providing an arbitrarily scalable blockchain without weakening security nor decentralisation.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06610&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Pump and Dumps in the Bitcoin Era: Real Time Detection of Cryptocurrency Market Manipulations&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/pump-and-dumps-in-the-bitcoin-era-real-time-detection-of-cryptocurrency-market-manipulations&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors present their research into cryptocurrency market manipulation (albeit in centralised crypto-fiat exchanges). They attribute the susceptibility of cryptocurrency to pump and dumps to the often low liquidity in certain more obscure cryptocurrencies. One finding of note is the operation of a large pump and dump community operating on Binance.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06227&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;eThor: Practical and Provably Sound Static Analysis of Ethereum Smart Contracts&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/ethor-practical-and-provably-sound-static-analysis-of-ethereum-smart-contracts&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+    &lt;p&gt;The authors present &lt;i&gt;eThor&lt;/i&gt;, a provably sound static analyser for Ethereum smart contracts.&lt;/p&gt;
+    &lt;p&gt;This paper is of particular interest as it provides another advancement in the first pillar of smart contract testing: static analysis. I've written about dynamic analysis tools (mainly fuzzers) before, and previous pre-prints in the series have discussed formal verification too.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06026&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Enabling Deletion in Append-Only Blockchains (Short Summary / Work in Progress)&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/enabling-deletion-in-append-only-blockchains-short-summary-work-in-progress&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+    &lt;p&gt;The authors describe a method of of &lt;i&gt;deleting&lt;/i&gt; previously confirmed blocks in a blockchain. While this seems to be entirely against the point of blockchains in the first place, but the authors provide a consensus-driven method for deleting blocks by way of context isolation.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.05996&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Towards Memory Safe Python Enclave for Security Sensitive Computation&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/towards-memory-safe-python-enclave-for-security-sensitive-computation&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+    &lt;p&gt;The authors extend advancements in Intel SGX-based memory enclaves implemented in Rust to Python. They cite the existing prevalance of Python in fields such as data science as a reason for such an extension.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06356&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Impact of Geo-distribution and Mining Pools on Blockchains: A Study of Ethereum&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/impact-of-geo-distribution-and-mining-pools-on-blockchains-a-study-of-ethereum&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+    &lt;p&gt;The authors present their findings from a month-long study into Ethereum network structure. Their study used geographically dispersed observation points to observe the geographical distribution of Ethereum and the impact of mining pools on the network.&lt;/p&gt;
+    &lt;p&gt;Personally, I think their study could have been more geographically dispersed, but I assume there were resource constraints on the authors precluding this.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.05944&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;CapablePtrs: Securely Compiling Partial Programs using the Pointers-as-Capabilities Principle&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/capableptrs-securely-compiling-partial-programs-using-the-pointers-as-capabilities-principle&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+    &lt;p&gt;The authors present a C-to-CHERI compiler of their development, which implements the Pointers-as-Capabilities model. One result is that their compiler can provide strong security guarantees for an individual compilation unit - even if it is later linked against buggy or malicious code.&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.06881&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Identifying Bugs in Make and JVM-Oriented Builds&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/identifying-bugs-in-make-and-jvm-oriented-builds&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+    &lt;p&gt;The authors present a tool called &lt;i&gt;buildfs&lt;/i&gt; which can reason about Make- and JVM-based build systems by interpreting their specification from the build scripts themselves and then analysing file system activity to see how the actual operation of the build may deviate from its specification.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;section id=&quot;biliography&quot;&gt;
+    &lt;h2&gt;Bibliography&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li id=&quot;ref-1&quot;&gt;A. Kattis and F. Trottner, &lt;i&gt;Stabilizing Congestion in Decentralized Record-Keepers&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-2&quot;&gt;V. S. S. Nadendla and L. R. Varshney, &lt;i&gt;A Difficulty in Controlling Blockchain Mining Costs via Cryptopuzzle Difficulty&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-3&quot;&gt;J. Ali and V. Dyo, &lt;i&gt;Practical Hash-based Anonymity for MAC Addresses&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-4&quot;&gt;G. Del Monte, D. Pennino and M. Pizzonia, &lt;i&gt;Scaling Blockchains Without Giving up Decentralization and Security&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-5&quot;&gt;M. La Morgia, A. Mei, F. Sassi and J. Stefa, &lt;i&gt;Pump and Dumps in the Bitcoin Era: Real Time Detection of Cryptocurrency Market Manipulations&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-6&quot;&gt;C. Schneidewind, I. Grishchenko, M. Scherer and M. Maffei, &lt;i&gt;eThor: Practical and Provably Sound Static Analysis of Ethereum Smart Contracts&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-7&quot;&gt;M. Kuperberg, &lt;i&gt;Enabling Deletion in Append-Only Blockchains (Short Summary / Work in Progress)&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-8&quot;&gt;H. Wang, M. Sun, Q. Feng, P. Wang, T. Li and Y. Ding, &lt;i&gt;Towards Memory Safe Python Enclave for Security Sensitive Computation&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-9&quot;&gt;P. Silva, D. Vavřička, J. Barreto and M. Matos, &lt;i&gt;Impact of Geo-distribution and Mining Pools on Blockchains: A Study of Ethereum&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-10&quot;&gt;A. El-Korashy, S. Tsampas, M. Patrignani, D. Devriese, D. Garg and F. Piessens, &lt;i&gt;CapablePtrs: Securely Compiling Partial Programs using the Pointers-as-Capabilities Principle&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-11&quot;&gt;T. Sotiropoulos, S. Chaliasos, D. Mitropoulos and D. Spinellis, &lt;i&gt;Identifying Bugs in Make and JVM-Oriented Builds&lt;/i&gt;, 2020&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;about-pre-print-saturdays&quot;&gt;
+    &lt;h2&gt;About &lt;i&gt;Pre-Print Saturday&lt;/i&gt;&lt;/h2&gt;
+        &lt;section id=&quot;about-what&quot;&gt;
+            &lt;h3&gt;What is this?&lt;/h3&gt;
+            &lt;p&gt;&lt;i&gt;Pre-Print Saturday&lt;/i&gt; is a series of posts I publish every Saturday. They summarise the previous week's arXiv submissions that I find interesting.&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id=&quot;about-why&quot;&gt;
+            &lt;h3&gt;Why do this?&lt;/h3&gt;
+            &lt;ol&gt;
+                &lt;li&gt;To keep me up-to-date with current literature&lt;/li&gt;
+                &lt;li&gt;To provide an organised way of recording and documenting this literature&lt;/li&gt;
+                &lt;li&gt;To provide a way for friends, collegues, and the public who may share my interests to remain up-to-date in a less labour-intensive way&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/section&gt;
+&lt;/section&gt;</content><author><name></name></author><category term="proof-of-work" /><category term="consensus" /><category term="congestion control" /><category term="all-pay auctions" /><category term="hashing" /><category term="MAC addresses" /><category term="anonymity" /><category term="k-anonymity" /><category term="scalability" /><category term="scalable blockchain" /><category term="pump and dump" /><category term="market manipulation" /><category term="secure enclave" /><category term="memory safety" /><category term="Intel SGX" /><category term="static analysis" /><category term="Ethereum" /><category term="smart contracts" /><category term="mining pools" /><category term="capabilities" /><summary type="html">Stabilizing Congestion in Decentralized Record-Keepers[Semion.io] The authors present a proposal for a distributed ledger system and accompanying payment system that leverages recent advancements in both PoW consensus and formal verification. The authors also present a formal economic model of their protocol design. Of particular interest is that their proposed system reaches stability in the absence of block rewards - relying solely on transaction fees to maintain consensus. A Difficulty in Controlling Blockchain Mining Costs via Cryptopuzzle Difficulty[Semion.io] The authors model PoW mining as an all-pay auction and prove several properties of the auction's allocation function. Practical Hash-based Anonymity for MAC Addresses[Semion.io] The authors present a viable method for anonymising MAC addresses through hashing. They improve on previous work using a hash-based strategy by using more expensive hash functions and ensuring \(k\)-bit anonymity. Scaling Blockchains Without Giving up Decentralization and Security[Semion.io] The authors present what they consider to be a blockchain design that escapes the so-called blockchain trilemma by providing an arbitrarily scalable blockchain without weakening security nor decentralisation. Pump and Dumps in the Bitcoin Era: Real Time Detection of Cryptocurrency Market Manipulations[Semion.io] The authors present their research into cryptocurrency market manipulation (albeit in centralised crypto-fiat exchanges). They attribute the susceptibility of cryptocurrency to pump and dumps to the often low liquidity in certain more obscure cryptocurrencies. One finding of note is the operation of a large pump and dump community operating on Binance. eThor: Practical and Provably Sound Static Analysis of Ethereum Smart Contracts[Semion.io] The authors present eThor, a provably sound static analyser for Ethereum smart contracts. This paper is of particular interest as it provides another advancement in the first pillar of smart contract testing: static analysis. I've written about dynamic analysis tools (mainly fuzzers) before, and previous pre-prints in the series have discussed formal verification too. Enabling Deletion in Append-Only Blockchains (Short Summary / Work in Progress)[Semion.io] The authors describe a method of of deleting previously confirmed blocks in a blockchain. While this seems to be entirely against the point of blockchains in the first place, but the authors provide a consensus-driven method for deleting blocks by way of context isolation. Towards Memory Safe Python Enclave for Security Sensitive Computation[Semion.io] The authors extend advancements in Intel SGX-based memory enclaves implemented in Rust to Python. They cite the existing prevalance of Python in fields such as data science as a reason for such an extension. Impact of Geo-distribution and Mining Pools on Blockchains: A Study of Ethereum[Semion.io] The authors present their findings from a month-long study into Ethereum network structure. Their study used geographically dispersed observation points to observe the geographical distribution of Ethereum and the impact of mining pools on the network. Personally, I think their study could have been more geographically dispersed, but I assume there were resource constraints on the authors precluding this. CapablePtrs: Securely Compiling Partial Programs using the Pointers-as-Capabilities Principle[Semion.io] The authors present a C-to-CHERI compiler of their development, which implements the Pointers-as-Capabilities model. One result is that their compiler can provide strong security guarantees for an individual compilation unit - even if it is later linked against buggy or malicious code. Identifying Bugs in Make and JVM-Oriented Builds[Semion.io] The authors present a tool called buildfs which can reason about Make- and JVM-based build systems by interpreting their specification from the build scripts themselves and then analysing file system activity to see how the actual operation of the build may deviate from its specification.</summary></entry><entry><title type="html">Pre-Print Saturday #1: 9 May 2020</title><link href="https://jmcph4.dev/2020/05/09/pre-print-saturday-1.html" rel="alternate" type="text/html" title="Pre-Print Saturday #1: 9 May 2020" /><published>2020-05-09T18:30:00+10:00</published><updated>2020-05-09T18:30:00+10:00</updated><id>https://jmcph4.dev/2020/05/09/pre-print-saturday-1</id><content type="html" xml:base="https://jmcph4.dev/2020/05/09/pre-print-saturday-1.html">&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.03564&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;QuickSync: A Quickly Synchronizing PoS-Based Blockchain Protocol&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/quicksync-a-quickly-synchronizing-pos-based-blockchain-protocol&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors present &lt;i&gt;QuickSync&lt;/i&gt;, a Proof-of-Stake blockchain consensus protocol based on Ouroboros[&lt;a href=&quot;#ref-6&quot;&gt;6&lt;/a&gt;]. The authors claim Byzantine resistance against an adversary with up to 50% stake and also performance improvements. The paper also contains proofs for both the liveness and persistence of this protocol.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.03199&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Enabling Cross-chain Transactions: A Decentralized Cryptocurrency Exchange Protocol&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/enabling-cross-chain-transactions-a-decentralized-cryptocurrency-exchange-protocol&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors propose a decentralised &lt;i&gt;cross&lt;/i&gt;-cryptocurrency exchange, motivated by trading Bitcoins for other cryptocurrencies. The authors implement a prototype as a DApp running on an Ethereum testnet.&lt;/p&gt;
+        &lt;p&gt;This paper is particularly interesting to me for two main reasons. Firstly, given my current research - both personal and coursework-related - into DExes and other DeFi platforms. Secondly, my interest in projects such as &lt;i&gt;tBTC&lt;/i&gt;[&lt;a href=&quot;#ref-7&quot;&gt;7&lt;/a&gt;]&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2004.09252&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;MemShield: GPU-assisted software memory encryption&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/memshield-gpu-assisted-software-memory-encryption&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors propose &lt;i&gt;MemShield&lt;/i&gt;, a framework for transparently encrypting primary memory to resist cold boot attacks. &lt;i&gt;MemShield&lt;/i&gt; is implemented as a C library that interacts with &lt;code&gt;userfaultfd&lt;/code&gt; to monitor for page requests from userspace. This system allows page-level granularity for memory protection.&lt;/p&gt;
+        &lt;p&gt;Cold boot attacks have always fascinated me, so mitigations against them are of particular interest as well. I'm impressed by both the granularity and compatibility of this project: &lt;i&gt;no changes to existing applications are required&lt;/i&gt;.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.01261&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Formal Verification of Solidity contracts in Event-B&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/formal-verification-of-solidity-contracts-in-event-b&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors define a subset of Solidity which can then be translated into Event-B - a modelling framework of which I have never heard of until discovering this paper. The authors assert that this greatly helps in the formal verification of Ethereum smart contracts.&lt;/p&gt;
+        &lt;p&gt;Recent coursework that I'm undertaking has required me to study different testing methodologies for Ethereum smart contracts. So far, this has only involved two categories: symbolic execution and fuzzing. This paper expands on the formal verification route - a category which I haven't covered in depth yet.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.02135&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Human Factors in Biocybersecurity Wargames&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/human-factors-in-biocybersecurity-wargames&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;Admittedly, I included this simply due to the spectacular title. Doesn't it just sound cool?&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://arxiv.org/abs/2005.01865&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;JaxNet: Scalable Blockchain Network&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/jaxnet-scalable-blockchain-network&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
+        &lt;p&gt;The authors propose a novel design for a scalable, decentralised Proof-of-Work blockchain, called &lt;i&gt;JaxNet&lt;/i&gt;. Their design uses a network of parallel chains that rewards miners for their computational effort in maintaining the network.&lt;/p&gt;
+        &lt;p&gt;This problem obviously garners an incredible amount of attention - both in academia and industry. Any new publications on the matter seem worthy of a mention.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;section id=&quot;biliography&quot;&gt;
+    &lt;h2&gt;Bibliography&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li id=&quot;ref-1&quot;&gt;S. Siddiqui and S. Gujar, &lt;i&gt;QuickSync: A Quickly Synchronizing PoS-based Blockchain Protocol&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-2&quot;&gt;H. Tian, K. Xue, S. Li, J. Xu, J. Liu, and J. Zhao, &lt;i&gt;Enabling Cross-chain Transactions: A Decentralized Cryptocurrency Exchange Protocol&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-3&quot;&gt;P. Santucci, E. Ingrassia, G. Picierro, and M. Cesati, &lt;i&gt;MemShield: GPU-assisted Software Memory Encryption&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-4&quot;&gt;J. Zhu, K. Hu, M. Filali, J.-P. Bodeveix, and J.-P. Talpin, &lt;i&gt;Formal Verification of Solidity Smart Contracts in Event-B&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-5&quot;&gt;L. Potter and X.-L. Palmer, &lt;i&gt;Human Factors in Biocybersecurity Wargames&lt;/i&gt;, 2020&lt;/li&gt;
+        &lt;li id=&quot;ref-6&quot;&gt;A. Kiayias, A. Russell, B. David, and R. Oliynykov, &quot;Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol,&quot; in &lt;i&gt;Advances in Cryptology - CRYPTO 2017&lt;/i&gt;, J. Katz and H. Shacham, Eds., Cham: Springer International Publishing, 2017, pp. 357-388, ISBN: 978-3-319-63688-7&lt;/li&gt;
+        &lt;li id=&quot;ref-7&quot;&gt;&quot;tBTC: A Decentralized Redeemable BTC-backed ERC-20 Token,&quot; Keep Network, May 7, 2020&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;about-pre-print-saturdays&quot;&gt;
+    &lt;h2&gt;About &lt;i&gt;Pre-Print Saturday&lt;/i&gt;&lt;/h2&gt;
+        &lt;section id=&quot;about-what&quot;&gt;
+            &lt;h3&gt;What is this?&lt;/h3&gt;
+            &lt;p&gt;&lt;i&gt;Pre-Print Saturday&lt;/i&gt; is a series of posts I publish every Saturday. They summarise the previous week's arXiv submissions that I find interesting.&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section id=&quot;about-why&quot;&gt;
+            &lt;h3&gt;Why do this?&lt;/h3&gt;
+            &lt;ol&gt;
+                &lt;li&gt;To keep me up-to-date with current literature&lt;/li&gt;
+                &lt;li&gt;To provide an organised way of recording and documenting this literature&lt;/li&gt;
+                &lt;li&gt;To provide a way for friends, collegues, and the public who may share my interests to remain up-to-date in a less labour-intensive way&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/section&gt;
+&lt;/section&gt;</content><author><name></name></author><category term="proof-of-stake" /><category term="blockchain" /><category term="consensus" /><category term="byzantine fault tolerance" /><category term="BFT" /><category term="ethereum" /><category term="bitcoin" /><category term="DEX" /><category term="DeFi" /><category term="memory encryption" /><category term="cold boot attack" /><category term="memory protection" /><category term="paging" /><category term="solidity" /><category term="event-b" /><category term="formal verification" /><category term="formal methods" /><category term="biocybersecurity" /><category term="proof-of-work" /><category term="cross-chain communication" /><summary type="html">QuickSync: A Quickly Synchronizing PoS-Based Blockchain Protocol[Semion.io] The authors present QuickSync, a Proof-of-Stake blockchain consensus protocol based on Ouroboros[6]. The authors claim Byzantine resistance against an adversary with up to 50% stake and also performance improvements. The paper also contains proofs for both the liveness and persistence of this protocol. Enabling Cross-chain Transactions: A Decentralized Cryptocurrency Exchange Protocol[Semion.io] The authors propose a decentralised cross-cryptocurrency exchange, motivated by trading Bitcoins for other cryptocurrencies. The authors implement a prototype as a DApp running on an Ethereum testnet. This paper is particularly interesting to me for two main reasons. Firstly, given my current research - both personal and coursework-related - into DExes and other DeFi platforms. Secondly, my interest in projects such as tBTC[7] MemShield: GPU-assisted software memory encryption[Semion.io] The authors propose MemShield, a framework for transparently encrypting primary memory to resist cold boot attacks. MemShield is implemented as a C library that interacts with userfaultfd to monitor for page requests from userspace. This system allows page-level granularity for memory protection. Cold boot attacks have always fascinated me, so mitigations against them are of particular interest as well. I'm impressed by both the granularity and compatibility of this project: no changes to existing applications are required. Formal Verification of Solidity contracts in Event-B[Semion.io] The authors define a subset of Solidity which can then be translated into Event-B - a modelling framework of which I have never heard of until discovering this paper. The authors assert that this greatly helps in the formal verification of Ethereum smart contracts. Recent coursework that I'm undertaking has required me to study different testing methodologies for Ethereum smart contracts. So far, this has only involved two categories: symbolic execution and fuzzing. This paper expands on the formal verification route - a category which I haven't covered in depth yet. Human Factors in Biocybersecurity Wargames[Semion.io] Admittedly, I included this simply due to the spectacular title. Doesn't it just sound cool? JaxNet: Scalable Blockchain Network[Semion.io] The authors propose a novel design for a scalable, decentralised Proof-of-Work blockchain, called JaxNet. Their design uses a network of parallel chains that rewards miners for their computational effort in maintaining the network. This problem obviously garners an incredible amount of attention - both in academia and industry. Any new publications on the matter seem worthy of a mention.</summary></entry><entry><title type="html">Crackerjack - Introduction and Puzzle A Solution</title><link href="https://jmcph4.dev/2018/02/07/crackerjack-introduction-and-puzzle-a-solution.html" rel="alternate" type="text/html" title="Crackerjack - Introduction and Puzzle A Solution" /><published>2018-02-07T00:00:00+10:00</published><updated>2018-02-07T00:00:00+10:00</updated><id>https://jmcph4.dev/2018/02/07/crackerjack-introduction-and-puzzle-a-solution</id><content type="html" xml:base="https://jmcph4.dev/2018/02/07/crackerjack-introduction-and-puzzle-a-solution.html">&lt;section id=&quot;s1&quot;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;As part of my journey into reverse engineering, I decided to create my own set of &lt;a href=&quot;https://en.wikipedia.org/wiki/Crackme&quot; target=&quot;_blank&quot; title=&quot;Crackme - Wikipedia&quot;&gt;&quot;crackmes&quot;&lt;/a&gt; called &lt;a href=&quot;https://github.com/jmcph4/crackerjack&quot; target=&quot;_blank&quot; title=&quot;GitHub - jmcph4/crackerjack: A collection of crackmes&quot;&gt;Crackerjack&lt;/a&gt;. I will be doing a series of articles detailing solutions to each puzzle, predominantly using radare2 and Unix utilities.&lt;/p&gt;
+
+&lt;p&gt;While Crackerjack is still a work in progress, each puzzle is standalone. Thus, once one is committed, it means it is ready to be solved. Each puzzle in Crackerjack accepts some arbitrary input on &lt;code&gt;stdin&lt;/code&gt;, compares it against the passphrase for that puzzle, and outputs either &lt;kbd&gt;PASS&lt;/kbd&gt; or &lt;kbd&gt;FAIL&lt;/kbd&gt;. The aim of the game is to determine each passphrase (yes, I know them all, and you can too if you study the source code). In this post, I will walkthrough the solution of the first puzzle, Puzzle A. Be warned, it is &lt;i&gt;very&lt;/i&gt; easy (at least when it comes to crackmes).&lt;/p&gt;
+
+&lt;p&gt;To acquire the binaries, get a local copy of the Git repository, compile, and strip the binaries:&lt;/p&gt;
+
+&lt;pre&gt;
+$ git clone https://github.com/jmcph4/crackerjack.git
+$ cd crackerjack
+$ make
+$ strip bin/*
+&lt;/pre&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s2&quot;&gt;
+&lt;h2&gt;Puzzle A&lt;/h2&gt;
+&lt;p&gt;The first puzzle is in &lt;code&gt;bin/a&lt;/code&gt;. When I first start reverse engineering a program, I like to use it myself for a bit in order to get some intuition as to how the program works. Try running the puzzle binary and trying some different passphrases (who knows, you might get lucky).&lt;/p&gt;
+
+As mentioned above, due to this puzzle being the first in the collection it is not meant to be difficult (and is quite the opposite). With this in mind, we can expect to be exploiting some rather low-hanging fruit. Open the puzzle binary in radare2 and use the &lt;kbd&gt;iz&lt;/kbd&gt; command to display a list of all ASCII strings radare2 could find in the binary:&lt;/p&gt;
+
+&lt;pre&gt;
+$ r2 bin/a
+[0x00000630]&gt; iz
+vaddr=0x00000847 paddr=0x00000847 ordinal=000 sz=7 len=6 section=.rodata type=ascii string=trance
+vaddr=0x0000084e paddr=0x0000084e ordinal=001 sz=5 len=4 section=.rodata type=ascii string=PASS
+vaddr=0x00000853 paddr=0x00000853 ordinal=002 sz=5 len=4 section=.rodata type=ascii string=FAIL
+&lt;/pre&gt;
+
+&lt;p&gt;Of course, your output will differ slightly from mine (e.g. the PID used, etc.); however, the key aspects remain the same. Our listing contains three different strings:&lt;/p&gt;
+
+&lt;p&gt;
+&lt;ol&gt;
+    &lt;li&gt;&lt;kbd&gt;trance&lt;/kbd&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;kbd&gt;PASS&lt;/kbd&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;kbd&gt;FAIL&lt;/kbd&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Well, we know that every puzzle in Crackerjack outputs either &lt;kbd&gt;PASS&lt;/kbd&gt; or &lt;kbd&gt;FAIL&lt;/kbd&gt; depending on our passphrase, so the last two strings are easily accounted for. The first string, &lt;kbd&gt;trance&lt;/kbd&gt;, looks very out of place. If we attempt this as our passphrase:&lt;/p&gt;
+
+&lt;pre&gt;
+$ ./bin/a
+trance
+PASS
+&lt;/pre&gt;
+
+&lt;p&gt;Success! We have successfully solved the first puzzle binary, using &lt;i&gt;very&lt;/i&gt; simple techniques.&lt;/p&gt;
+
+&lt;p&gt;We used radare2 to display all of the ASCII strings contained within the puzzle binary and made an educated guess as to what the passphrase was. Note that we did not really need radare2 for this (but it did make it rather nice to digest). Unix has a nice utility called &lt;code&gt;strings&lt;/code&gt;, which lists &lt;i&gt;printable&lt;/i&gt; ASCII strings in &lt;i&gt;any arbitrary file&lt;/i&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+$ strings bin/a
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+__isoc99_scanf
+puts
+__cxa_finalize
+strcmp
+__libc_start_main
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_Jv_RegisterClasses
+_ITM_registerTMCloneTable
+GLIBC_2.7
+GLIBC_2.2.5
+=I       
+=*       
+AWAVA
+AUATL
+[]A\A]A^A_
+trance
+PASS
+FAIL
+;*3$&quot;
+GCC: (Debian 6.3.0-18) 6.3.0 20170516
+crtstuff.c
+__JCR_LIST__
+deregister_tm_clones
+__do_global_dtors_aux
+completed.6963
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+__FRAME_END__
+__JCR_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+_ITM_deregisterTMCloneTable
+puts@@GLIBC_2.2.5
+_edata
+__libc_start_main@@GLIBC_2.2.5
+__data_start
+strcmp@@GLIBC_2.2.5
+__gmon_start__
+__dso_handle
+_IO_stdin_used
+__libc_csu_init
+__bss_start
+main
+_Jv_RegisterClasses
+__isoc99_scanf@@GLIBC_2.7
+__TMC_END__
+_ITM_registerTMCloneTable
+__cxa_finalize@@GLIBC_2.2.5
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.jcr
+.dynamic
+.got.plt
+.data
+.bss
+.comment
+&lt;/pre&gt;
+
+&lt;p&gt;While this works, it is clearly much more tedious than the method we employed earlier. The beauty of radare2 is that it is smart enough to know which strings to display and which to omit.&lt;/p&gt;
+
+&lt;p&gt;If we want an &lt;i&gt;even more&lt;/i&gt; tedious method, opening the binary in a hex editor, or even just a plain text editor (or better yet, in &lt;code&gt;less&lt;/code&gt;) and simply skim-reading for human-readable words would have worked (this is not for the weak-willed, though).&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s3&quot;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Crackerjack is a work in progess and I am adding new puzzles as I write and test them. I will publish a walkthrough for Puzzle B soon (Puzzle B poses more interesting challenges, but is not out of reach).&lt;/p&gt;
+
+&lt;p&gt;On a more general note, if you are looking for some excellent communities for learning and discussing reverse engineering, consider &lt;a href=&quot;https://reddit.com/r/ReverseEngineering&quot; target=&quot;_blank&quot; title=&quot;Reverse Engineering&quot;&gt;/r/ReverseEngineering&lt;/a&gt; or &lt;a href=&quot;https://reddit.com/r/REGames&quot; target=&quot;_blank&quot; title=&quot;Reverse Engineering Games&quot;&gt;/r/REGames&lt;/a&gt; on Reddit, or the &lt;a href=&quot;https://reverseengineering.stackexchange.com&quot; target=&quot;_blank&quot; title=&quot;Reverse Engineering Stack Exchange&quot;&gt;Reverse Engineering Stack Exchange&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><category term="binary analysis" /><category term="malware analysis" /><category term="binary exploitation" /><category term="disassembly" /><category term="machine code" /><category term="crackme" /><category term="cybersecurity" /><summary type="html">As part of my journey into reverse engineering, I decided to create my own set of crackmes called Crackerjack. I will be doing a series of articles detailing solutions to each puzzle</summary></entry><entry><title type="html">Identifying Loops While Reverse Engineering</title><link href="https://jmcph4.dev/2018/02/02/identifying-loops-while-reverse-engineering.html" rel="alternate" type="text/html" title="Identifying Loops While Reverse Engineering" /><published>2018-02-02T00:00:00+10:00</published><updated>2018-02-02T00:00:00+10:00</updated><id>https://jmcph4.dev/2018/02/02/identifying-loops-while-reverse-engineering</id><content type="html" xml:base="https://jmcph4.dev/2018/02/02/identifying-loops-while-reverse-engineering.html">&lt;section id=&quot;s1&quot;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Often when reverse engineering a binary, it's useful to have some patterns to help identify higher-level code constructs. This post goes through the general structure of various loops in a higher-level language (C) and their corresponding assembly format.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s2&quot;&gt;
+&lt;h2&gt;&lt;code&gt;for&lt;/code&gt; Loops&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;for&lt;/code&gt; loops are probably the most common loop in use today. As you're probably aware, &lt;code&gt;for&lt;/code&gt; loops are normally used to generate a sequence or to iterate over some container. They look like this:&lt;/p&gt;
+
+&lt;pre&gt;
+for(i=A;i&amp;lt;B;i+=C)
+{
+    /* ... */
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Admittedly, &lt;code&gt;for&lt;/code&gt; loops usually just increment their loop counter, but we can be even more general. The corresponding machine code for this code snippet would look something like this:&lt;/p&gt;
+
+&lt;pre&gt;
+mov dword [rbp - 4], A
+jmp 5
+; ...
+add dword [rbp - 4], C
+cmp dword [rbp - 4], B-1
+jbe 1
+&lt;/pre&gt;
+
+&lt;p&gt;For the snippet above, I've used line numbers for the jumps on lines 2 and 6, but in practice they would be the corresponding addresses in memory for these instructions.&lt;/p&gt;
+
+&lt;p&gt;Let's look at a concrete example. Consider the following C program:&lt;/p&gt;
+
+&lt;pre&gt;
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+
+int main(void)
+{
+    for(unsigned int i=0;i&amp;lt;3;i++)
+    {
+        printf(&quot;%d&quot;, i);
+    }
+    
+    return EXIT_SUCCESS;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;I'm using my 64-bit Debian machine, so I've included my &lt;code&gt;uname&lt;/code&gt; output for reference. I'm compiling using GCC and using &lt;code&gt;objdump&lt;/code&gt; to get the disassembly of our executable.&lt;/p&gt;
+
+&lt;pre&gt;
+$ uname --all
+Linux devlaptop 4.9.0-4-amd64 #1 SMP Debian 4.9.65-3+deb9u1 (2017-12-23) x86_64 GNU/Linux
+$ gcc for.c -Wall -Wextra -Wshadow -pedantic -std=c11 -o for
+$ objdump -d -Mintel for
+&lt;/pre&gt;
+
+&lt;p&gt;Let's just look at the disassembly of &lt;code&gt;main&lt;/code&gt; (I've included my own comments on relevant lines):&lt;/p&gt;
+
+&lt;pre&gt;
+00000000000006b0 &lt;main&gt;:
+ 6b0:   55                      push   rbp
+ 6b1:   48 89 e5                mov    rbp,rsp
+ 6b4:   48 83 ec 10             sub    rsp,0x10
+ 6b8:   c7 45 fc 00 00 00 00    mov    DWORD PTR [rbp-0x4],0x0                                      ; initialise loop counter to zero
+ 6bf:   eb 1a                   jmp    6db &amp;lt;main+0x2b&amp;gt;                                        ; jump to loop condition check
+ 6c1:   8b 45 fc                mov    eax,DWORD PTR [rbp-0x4]
+ 6c4:   89 c6                   mov    esi,eax
+ 6c6:   48 8d 3d a7 00 00 00    lea    rdi,[rip+0xa7]        # 774 &lt;_IO_stdin_used+0x4&gt;
+ 6cd:   b8 00 00 00 00          mov    eax,0x0
+ 6d2:   e8 89 fe ff ff          call   560 &lt;printf@plt&gt;
+ 6d7:   83 45 fc 01             add    DWORD PTR [rbp-0x4],0x1                                      ; increment loop counter by 1
+ 6db:   83 7d fc 03             cmp    DWORD PTR [rbp-0x4],0x2                                      ; check if loop counter has reached 2 (terminating condition)
+ 6df:   76 e0                   jbe    6c1 &amp;lt;main+0x11&amp;gt;                                        ; jump based on the result of this comparison
+ 6e1:   b8 00 00 00 00          mov    eax,0x0
+ 6e6:   c9                      leave  
+ 6e7:   c3                      ret    
+ 6e8:   0f 1f 84 00 00 00 00    nop    DWORD PTR [rax+rax*1+0x0]
+ 6ef:   00
+&lt;/pre&gt;
+
+&lt;p&gt;The first three instructions are the function prologue for &lt;code&gt;main&lt;/code&gt;. The fourth instruction initialises our loop counter variable (&lt;code&gt;i&lt;/code&gt;) to zero, and the fifth instruction performs a jump to our loop condition check (the 12&lt;sup&gt;th&lt;/sup&gt; instruction). The code at 0x6c1-0x0x6d2 simply sets up the parameters to &lt;code&gt;printf&lt;/code&gt; and calls it. At 0x6d7 our loop counter is incremented (in our case, by one). The next instruction after that checks whether our loop counter has reached 2 yet and the instruction after &lt;i&gt;that&lt;/i&gt; jumps based off of the result of this comparison.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s3&quot;&gt;
+&lt;h2&gt;&lt;code&gt;while&lt;/code&gt; Loops&lt;/h2&gt;
+
+&lt;p&gt;What about &lt;code&gt;while&lt;/code&gt; loops? The analagous &lt;code&gt;while&lt;/code&gt; loop version of our &lt;code&gt;for&lt;/code&gt; loop template above looks like this:&lt;/p&gt;
+
+&lt;pre&gt;
+i = A;
+while(i &lt; B)
+{
+    /* ... */
+    i += C;
+}
+&lt;/pre&gt;
+
+If we rewrite our toy program (in &lt;code&gt;for.c&lt;/code&gt;) to use a &lt;code&gt;while&lt;/code&gt; loop instead of a &lt;code&gt;for&lt;/code&gt; loop and recompile, we can check the resultant machine code in the same way we did previously.
+
+&lt;pre&gt;
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+
+int main(void)
+{
+    unsigned int i = 0;
+    
+    while(i &amp;lt; 3)
+    {
+        printf(&quot;%d&quot;, i);
+    }
+
+    return EXIT_SUCCESS;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Our resulting disassembly is as follows:&lt;/p&gt;
+
+&lt;pre&gt;
+00000000000006b0 &amp;lt;main&amp;gt;:
+ 6b0:   55                      push   rbp
+ 6b1:   48 89 e5                mov    rbp,rsp
+ 6b4:   48 83 ec 10             sub    rsp,0x10
+ 6b8:   c7 45 fc 00 00 00 00    mov    DWORD PTR [rbp-0x4],0x0
+ 6bf:   eb 1a                   jmp    6db &amp;lt;main+0x2b&amp;gt;
+ 6c1:   8b 45 fc                mov    eax,DWORD PTR [rbp-0x4]
+ 6c4:   89 c6                   mov    esi,eax
+ 6c6:   48 8d 3d a7 00 00 00    lea    rdi,[rip+0xa7]        # 774 &amp;lt;_IO_stdin_used+0x4&amp;gt;
+ 6cd:   b8 00 00 00 00          mov    eax,0x0
+ 6d2:   e8 89 fe ff ff          call   560 &lt;printf@plt&gt;
+ 6d7:   83 45 fc 01             add    DWORD PTR [rbp-0x4],0x1
+ 6db:   83 7d fc 03             cmp    DWORD PTR [rbp-0x4],0x3
+ 6df:   76 e0                   jbe    6c1 &amp;lt;main+0x11&amp;gt;
+ 6e1:   b8 00 00 00 00          mov    eax,0x0
+ 6e6:   c9                      leave  
+ 6e7:   c3                      ret    
+ 6e8:   0f 1f 84 00 00 00 00    nop    DWORD PTR [rax+rax*1+0x0]
+ 6ef:   00
+&lt;/pre&gt;
+
+&lt;p&gt;Exactly the same! Even &lt;code&gt;diff&lt;/code&gt; agrees.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s4&quot;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Ultimately, both types of loops essentially boil down to jumping, comparing, and jumping based on the comparison (after all, that's what &lt;i&gt;looping&lt;/i&gt; is). While these patterns aren't hard to spot by hand, tools such as radare2 provide helpful ASCII art arrows or other visual aids to show control flow in general, not just for loops. As I myself am still new to reverse engineering, I find it helpful to have such patterns in mind to help provide structure to what can seem like an endless pool of machine code.&lt;/p&gt;
+
+&lt;p&gt;If this article was interesting to you and you'd like to apply these techniques to some more complicated binaries, check out &lt;a href=&quot;https://github.com/jmcph4/crackerjack&quot; target=&quot;_blank&quot; title=&quot;jmcph4/crackerjack: A collection of crackmes&quot;&gt;this project&lt;/a&gt; of mine.&lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><category term="binary analysis" /><category term="binary exploitation" /><category term="reverse engineering" /><category term="disassembly" /><category term="decompilation" /><category term="machine code" /><summary type="html">Often when reverse engineering a binary, it's useful to have some patterns to help identify higher-level code constructs. This post goes through the general structure of various loops in a higher-level language (C) and their corresponding assembly format</summary></entry><entry><title type="html">Writing a Simple Fuzzer in Python</title><link href="https://jmcph4.dev/2018/01/19/writing-a-simple-fuzzer-in-python.html" rel="alternate" type="text/html" title="Writing a Simple Fuzzer in Python" /><published>2018-01-19T00:00:00+10:00</published><updated>2018-01-19T00:00:00+10:00</updated><id>https://jmcph4.dev/2018/01/19/writing-a-simple-fuzzer-in-python</id><content type="html" xml:base="https://jmcph4.dev/2018/01/19/writing-a-simple-fuzzer-in-python.html">&lt;p&gt;I have had an interest in fuzzing for quite some time now, and had decided that it was time to start writing some of my own (very basic) fuzzing tools. In this post, we'll step through some of the basic things we might expect from a fuzzer and how we might achieve them using some of the code I have written.&lt;/p&gt;
+
+&lt;section id=&quot;s1&quot;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Firslty, we need to grab our dependencies. For this tutorial, we'll be using two projects of mine: &lt;a href=&quot;https://github.com/jmcph4/mph&quot; title=&quot;&quot; target=&quot;_blank&quot;&gt;MPH&lt;/a&gt; and &lt;a href=&quot;https://github.com/jmcph4/fuzzbang&quot; title=&quot;&quot; target=&quot;_blank&quot;&gt;Fuzzbang&lt;/a&gt; (these will be discussed later in the tutorial):&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; git clone https://github.com/jmcph4/mph.git
+$&gt; git clone https://github.com/jmcph4/fuzzbang.git
+&lt;/pre&gt;
+
+&lt;p&gt;Secondly, create a directory for our project and &lt;code&gt;cd&lt;/code&gt; into it:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; mkdir fuzztut
+$&gt; cd fuzztut
+&lt;/pre&gt;
+
+&lt;p&gt;Thirdly, copy the actual Python packages into our project directory:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; cp ../mph/mph mph -r
+$&gt; cp ../fuzzbang/fuzzbang fuzzbang -r
+&lt;/pre&gt;
+
+&lt;p&gt;Our project directory should now look like this:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; ls
+fuzzbang mph
+&lt;/pre&gt;
+
+&lt;p&gt;We're now ready to commence development!&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s2&quot;&gt;
+&lt;h2&gt;The Target&lt;/h2&gt;
+&lt;p&gt;While both of the main packages this post centres around are designed to be as generic and adaptable as possible, a concrete example is often easier to learn with. So, let's create our fuzzing target, &lt;code&gt;name&lt;/code&gt;:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/jmcph4/95c3220ae04e9dea3ece19b0cb4285d0.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;All &lt;code&gt;name&lt;/code&gt; does is prompts the user for their name via &lt;code&gt;stdout&lt;/code&gt;, then accepts an &lt;b&gt;arbitrarily long&lt;/b&gt; input from the user on &lt;code&gt;stdin&lt;/code&gt;, and finally greets the user on &lt;code&gt;stdout&lt;/code&gt; with their supplied name. This is a textbook example of a &lt;a href=&quot;https://en.wikipedia.org/wiki/Buffer_overflow&quot; target=&quot;_blank&quot; title=&quot;Buffer overflow - Wikipedia&quot;&gt;buffer overflow&lt;/a&gt; (those familiar with the concept probably already saw this). To compile &lt;code&gt;name&lt;/code&gt;, simply run:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; gcc name.c -Wall -Wextra -Wshadow -pedantic -std=c11 -g3 -o name
+&lt;/pre&gt;
+
+&lt;p&gt;Our project now looks like this:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; ls
+fuzzbang mph name.c name
+&lt;/pre&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s3&quot;&gt;
+&lt;h2&gt;Talking to the Target&lt;/h2&gt;
+&lt;p&gt;Now that we have our target program, we need some way to talk to it from our Python code. Python 3 has the &lt;code&gt;subprocess&lt;/code&gt; module for this reason, but we will use a simple wrapper around it: MPH. MPH is a simple Python package which essentially just wraps the parts of &lt;code&gt;subprocess&lt;/code&gt; relevant for our purposes. MPH allows a Python programmer to execute a program with various inputs and capture the output (not just &lt;code&gt;stdout&lt;/code&gt; and &lt;code&gt;stderr&lt;/code&gt;, but also the return code and any signals received). From the example in the &lt;a href=&quot;https://github.com/jmcph4/mph/blob/8fa42aebc92e864c6832009aa0c124b3b9b3e0b8/README.md&quot; title=&quot;mph/README.md at 8fa42aebc92e864c6832009aa0c124b3b9b3e0b8 · jmcph4/mph · GitHub&quot; target=&quot;_blank&quot;&gt;MPH README&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;
+from mph import program
+
+prog = program.Program(&quot;/path/to/myprog&quot;, [])   # initialise program
+prog.append_string_stdin(&quot;Hello, world!&quot;)       # write to stdin
+prog.exec()                                     # run program
+
+# check return value of guest executable
+if prog.retval == 0:
+    print(prog.stdout)
+else:
+    print(&quot;Inferior returned with return code &quot; + str(prog.retval) + &quot;\n&quot;)
+&lt;/pre&gt;
+
+&lt;p&gt;In this example, the string &lt;code&gt;&quot;Hello, world!&quot;&lt;/code&gt; could be replaced with any arbitrary string (insertion of arbitrary &lt;i&gt;binary&lt;/i&gt; data is available via &lt;code&gt;Program.append_stdin&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Let's start writing our fuzzer in Python. Create a file called &lt;code&gt;fuzztut.py&lt;/code&gt; and use your preferred editor to open it. We'll start off by writing a function that sends a string to &lt;code&gt;name&lt;/code&gt; and then executes it:&lt;/p&gt;
+
+&lt;pre&gt;
+import sys
+from mph.program import Program
+from fuzzbang.alphanumericfuzzer import AlphaNumericFuzzer
+
+PATH_TO_NAME = &quot;&quot; # fill this in yourself
+
+def run(string):
+    &quot;&quot;&quot;
+    Sends the provided string to the `name` program and runs it with that
+    input. Returns the return value `name` gives us
+    &quot;&quot;&quot;
+    prog = Program(PATH_TO_NAME, [])
+    prog.append_string_stdin(string)
+    prog.exec()
+    
+    return prog.retval
+&lt;/pre&gt;
+
+&lt;p&gt;Note that you will need to provide an &lt;b&gt;absolute&lt;/b&gt; path to &lt;code&gt;name&lt;/code&gt; on line 5. For example, my version of line 5 would look like:&lt;/p&gt;
+
+&lt;pre&gt;PATH_TO_NAME = &quot;/home/jack/dev/fuzztut/name&quot; # fill this in yourself&lt;/pre&gt;
+
+&lt;p&gt;Our project now looks like this:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; ls
+fuzzbang fuzztut.py mph name name.c 
+&lt;/pre&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s4&quot;&gt;
+&lt;h2&gt;Generating Test Data&lt;/h2&gt;
+&lt;p&gt;At this point, we can send strings to &lt;code&gt;name&lt;/code&gt;, run it, and see what the result was. This alone is just a convoluted way of running programs - what we need is a way to generate meaningful test data to give to &lt;code&gt;name&lt;/code&gt;. For this, we'll use Fuzzbang. Fuzzbang is a Python 3 package providing a framework for producing fuzzing data. Consulting the &lt;a href=&quot;https://github.com/jmcph4/fuzzbang/blob/31ebf5173abc4b03dd6ccd0a5d2a7466ea92d915/README.md&quot; target=&quot;_blank&quot; title=&quot;fuzzbang/README.md at 31ebf5173abc4b03dd6ccd0a5d2a7466ea92d915 · jmcph4/fuzzbang · GitHub&quot;&gt;README&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;
+from fuzzbang.alphanumericfuzzer import AlphaNumericFuzzer
+
+N = 10 # number of test cases
+
+# bounds on length of alphanumeric strings
+MIN_LEN = 0
+MAX_LEN = 8
+
+f = AlphaNumericFuzzer(MIN_LEN, MAX_LEN) # fuzzer object
+
+# generate test cases
+for i in range(N):
+    data = f.generate() # generate string
+    print(&quot;(&quot; + str(len(data)) + &quot;)&quot;) # print length of string
+    print(data) # print string itself
+&lt;/pre&gt;
+
+&lt;p&gt;Let's now write a function that generates an alphanumeric string of a certain maximum length. It should be noted at this point that there is no special reason to use just alphanumeric strings - arbitrary binary data could be used (and could potentially even expose further, more subtle vulnerabilities in programs). We'll use alphanumeric input out of simplicity. In &lt;code&gt;fuzztut.py&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;
+def generate_input(n):
+    &quot;&quot;&quot;
+    Returns an alphanumeric string with a length no greater than n.
+    &quot;&quot;&quot;
+    fuzzer = AlphaNumericFuzzer(0, n)
+    
+    return fuzzer.generate()
+&lt;/pre&gt;
+
+&lt;p&gt;A few examples of how you might call &lt;code&gt;generate_input&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;
+generate_input(0) # (empty string)
+generate_input(1) # q
+generate_input(1) # T
+generate_input(1) # o
+generate_input(8) # rCyJblUl
+generate_input(8) # (empty string)
+generate_input(8) # M9R
+&lt;/pre&gt;
+
+&lt;p&gt;These are some examples taken from actual calls to the function on my local machine. Calls are repeated to demonstrate the pseudorandom nature of the output. Note that some calls to &lt;code&gt;generate_input(8)&lt;/code&gt; returned strings &lt;i&gt;less&lt;/i&gt; than eight characters long.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s5&quot;&gt;
+&lt;h2&gt;Implementing the Main Program&lt;/h2&gt;
+&lt;p&gt;We now have a way of interacting with &lt;code&gt;name&lt;/code&gt; (&lt;code&gt;run&lt;/code&gt;) and a way of generating (pseudo)random inputs for &lt;code&gt;name&lt;/code&gt; (&lt;code&gt;generate_input&lt;/code&gt;). All we need now is some code to drive the actual fuzzing process by bringing the two together.&lt;/p&gt;
+
+&lt;pre&gt;
+if _name__ == &quot;__main__&quot;:
+    # usage
+    if len(sys.argv) != 3:
+        print(&quot;usage: python3 fuzztut.py num_cases max_length&quot;)
+        exit(1)
+        
+    # command-line arguments    
+    num_cases = int(sys.argv[1]) # number of test cases to run
+    max_length = int(sys.argv[2]) # maximum length of each string
+       
+    results = [] # list for storing the result of each test
+    
+    # main loop
+    for i in range(num_cases):
+        input = generate_input() # generate input string
+        return_value = run(input) # run name with our input
+        
+        # save test results to our global results list
+        test_result = {}
+        test_result[&quot;num&quot;] = i
+        test_result[&quot;input&quot;] = input
+        test_result[&quot;output&quot;] = return_value
+        results.append(test_result)
+
+    # print summary
+    for test in results:
+        print(&quot;Case #{:d}:&quot;.format(test[&quot;num&quot;]))
+        print(&quot;    IN: &quot; + test[&quot;input&quot;])
+        print(&quot;    OUT: {:4d}&quot;.format(test[&quot;output&quot;]))
+        print(&quot;\n&quot;)
+&lt;/pre&gt;
+
+&lt;p&gt;Using our fuzzer is simple:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; python3 fuzztut.py
+usage: python3 fuzztut.py num_cases max_length
+&lt;/pre&gt;
+
+&lt;p&gt;For example,&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; python3 fuzztut.py 10 8
+
+&lt;/pre&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s6&quot;&gt;
+&lt;h2&gt;Fuzzing the Target&lt;/h2&gt;
+&lt;p&gt;Now that our fuzzer works, we can focus on fuzzing &lt;code&gt;name&lt;/code&gt; rather than writing the fuzzer. Recall that &lt;code&gt;name&lt;/code&gt; allocates a buffer of fixed size, yet accepts arbitrarily long input. Studying the code for &lt;code&gt;name&lt;/code&gt;, it's &lt;a href=&quot;https://gist.github.com/jmcph4/95c3220ae04e9dea3ece19b0cb4285d0#file-name-c-L4&quot; target=&quot;_blank&quot; title=&quot;Simple toy program in C that greets the user with their desired name (fuzzing target) · GitHub&quot;&gt;obvious&lt;/a&gt; that the buffer is 16 characters long. With this in mind, it makes sense that inputs longer than 16 characters are likely to cause issues. Let's try it:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; python3 fuzztut.py 10 32
+Case #0:
+    IN: wgZ0S7rF08
+    OUT:    0
+Case #1:
+    IN: y6tLHoJ2u4LRs158aAIlrHsVOHT
+    OUT:  -11
+Case #2:
+    IN: X0Ji7b5Z4TgYLYRpC0RAE740Xk
+    OUT:  -11
+Case #3:
+    IN: 6sOweDnPfmZdIxLiKm
+    OUT:    0
+Case #4:
+    IN: LTU
+    OUT:    0
+Case #5:
+    IN: XlAOQtgptB
+    OUT:    0
+Case #6:
+    IN: rYAi73kaZnwY
+    OUT:    0
+Case #7:
+    IN: B3LOMahprORnA69ROD9yI49OP
+    OUT:   -7
+Case #8:
+    IN: 6Tyrvvn0IK2GeURZoElR
+    OUT:    0
+Case #9:
+    IN: TZjgYFR
+    OUT:    0
+&lt;/pre&gt;
+
+&lt;p&gt;Notice that &lt;code&gt;name&lt;/code&gt; returned -11 on inputs 26-27 characters long, and -7 on an input 25 characters long. Let's see what happens if we execute &lt;code&gt;name&lt;/code&gt; ourselves with the same inputs:&lt;/p&gt;
+
+&lt;pre&gt;
+$&gt; ./name
+What's your name? y6tLHoJ2u4LRs158aAIlrHsVOHT
+Hi there, y6tLHoJ2u4LRs158aAIlrHsVOHT!
+Segmentation fault
+$&gt; ./name
+What's your name? B3LOMahprORnA69ROD9yI49OP
+Hi there, B3LOMahprORnA69ROD9yI49OP!
+Bus error
+&lt;/pre&gt;
+
+&lt;p&gt;Our fuzzer has revealed multiple inputs that cause &lt;code&gt;name&lt;/code&gt; to reliably crash!&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;s7&quot;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The bugs we found in the previous section warrant further investigation; however, actually &lt;i&gt;fixing&lt;/i&gt; the bugs in &lt;code&gt;name&lt;/code&gt; is outside the scope of this tutorial. These bugs will be addressed and explained in another post.&lt;/p&gt;
+
+&lt;p&gt;In summary, we used two small, very simple Python packages to write a (very simple) fuzzer to help us diagnose issues in a program we wrote. While &lt;code&gt;name&lt;/code&gt; is only a toy program (with an intentional vulnerability), most of what we did in this tutorial - including the code we wrote - can be easily abstracted to any general binary executable. Both MPH and Fuzzbang provide facilities for doing so.&lt;/p&gt;
+
+&lt;p&gt;The complete code for &lt;code&gt;fuzztut.py&lt;/code&gt; is available as a Gist &lt;a href=&quot;https://gist.github.com/jmcph4/51b0884c8cca76b879d364a33f8da934&quot; target=&quot;_blank&quot; title=&quot;Full, working code for Writing a Simple Fuzzer in Python at https://jmcph4.github.com/2018/01/19/writing-a-simple-fuzzer-in-python&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;</content><author><name></name></author><category term="fuzzing" /><category term="automated testing" /><category term="program analysis" /><category term="dynamic analysis" /><category term="testing methodologies" /><summary type="html">I have had an interest in fuzzing for quite some time now, and had decided that it was time to start writing some of my own (very basic) fuzzing tools. In this post, we'll step through some of the basic things we might expect from a fuzzer and how we might achieve them using some of the code I have written</summary></entry><entry><title type="html">A Model For ADTs</title><link href="https://jmcph4.dev/2017/01/14/a-model-for-adts.html" rel="alternate" type="text/html" title="A Model For ADTs" /><published>2017-01-14T00:00:00+10:00</published><updated>2017-01-14T00:00:00+10:00</updated><id>https://jmcph4.dev/2017/01/14/a-model-for-adts</id><content type="html" xml:base="https://jmcph4.dev/2017/01/14/a-model-for-adts.html">&lt;p&gt;For the past month or so I have concerned myself with the study of Abstract Data Types (ADTs), particularly the precise, abstract mathematical definition of them. This post reflects the current culmination of my efforts.&lt;/p&gt;
+
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Abstract Data Types (ADTs) are mathematical objects somewhat congruent to algebraic structures in pure mathematics. We have a set of operations we can perform on a given ADT and a set of values it may take.&lt;/p&gt;
+
+&lt;p&gt;For the purposes of my analysis, an axiom I have adopted is that &lt;b&gt;no ADT can be perfectly implemented in any computer programming language&lt;/b&gt;. This is due to the inherent nature of real computers: i.e., they are error-prone. ADTs, like any mathematical objects, do not suffer from &quot;errors&quot; (imagine taking the logarithm of a negative number and the universe raising an exception).&lt;/p&gt;
+
+&lt;p&gt;Despite this seemingly pessimistic outlook, we can implement ADTs effectively and quite closely to their mathematical definitions. Firstly, we require some way to understand and reason about ADTs in general. We require a &lt;b&gt;specification&lt;/b&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Specification of ADTs&lt;/h2&gt;
+&lt;p&gt;Above, I claimed that the formal mathematical definition of an ADT is a set of operations and a set of possible values, this is not as pragmatic as I would like. It is at this point that I started to devise a strategy for specifying ADTs in a more useful sense. We define the following characteristics of any general ADT:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;&lt;p&gt;Operations&lt;/p&gt;&lt;/li&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;p&gt;Unary&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;Binary&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;li&gt;&lt;p&gt;Access&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Size&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Equality&lt;sup&gt;&amp;#10013;&lt;/sup&gt;&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Membership&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are charactertistics of all ADTs, not merely specific ones. Examples of such specifications are available as a &lt;a href=&quot;https://gist.github.com/jmcph4/683238e6236ed0b5f90457f7eb8c767a&quot; target=&quot;_blank&quot; title=&quot;jmcph4/adt.md&quot;&gt;Gist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Hierarchy of ADTs&lt;/h2&gt;
+&lt;p&gt;It is well known that some ADTs are special cases of other, more general, ADTs. For instance, a binary tree is an ADT that is a special case of the (more general) tree ADT (also referred to as a \(k\)-ary tree with \(k=2\)). This becomes quite evident when specifying ADTs, as one finds themselves repeating themselves more and more. This is the motivation behind my ADT graph (not the ADT &lt;b&gt;called&lt;/b&gt; a graph, but a graph &lt;b&gt;of&lt;/b&gt; ADTs).&lt;/p&gt;
+
+&lt;p&gt;Let us define a directed graph, \(G\), whose vertices are ADTs. An edge in \(G\) from a vertex \(u\) to a vertex \(v\) denotes that the ADT represented by \(v\) is a special case of the ADT represented by \(u\).&lt;/p&gt;
+
+&lt;img src=&quot;https://gist.githubusercontent.com/jmcph4/3a429b9478e9bdd7ed25cb3b6aa07acf/raw/bdf21f776de04cb54dea4d921a58a04b01e1f51e/ADT_graph_image.PNG&quot; /&gt;
+
+&lt;p&gt;In some sense, the &quot;most important&quot; ADTs in \(G\) are those \(v\in G\) such that \(deg^{+}(v)=0\), as these are the ADTs which are the most general and thus all other ADTs can be derived. We will call the set of all such ADTs the set of &lt;i&gt;base ADTs&lt;/i&gt;. In the current model, this set is: $$\{List, Hypergraph, Stack, Queue, Multimap, Multiset\}$$&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The description of the model I have given here is by no means complete. For example, the ADT graph does not have every ADT in existence in it (nor can it, in practice). Despite this incompleteness, I hope that I have provided sufficient description to enable the model to be well-understood and useful. Of course, I am open to change and growth of the model.&lt;/p&gt;
+
+&lt;hr&gt;
+&lt;p&gt;&lt;sup&gt;&amp;#10013;&lt;/sup&gt;By &quot;equality&quot;, I mean mathematical equality. In a concrete implementation, this is actually closer to isomorphism, as in computer programming, two things are &quot;equal&quot; when they are in fact the same thing.&lt;/p&gt;</content><author><name></name></author><category term="abstract data types" /><category term="ADTs" /><category term="algorithms" /><category term="data structures" /><category term="interface" /><summary type="html">For the past month or so I have concerned myself with the study of Abstract Data Types (ADTs), particularly the precise, abstract mathematical definition of them. This post reflects the current culmination of my efforts.</summary></entry></feed>

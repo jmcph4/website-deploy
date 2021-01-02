@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-AU">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>A Model For ADTs | Disciple of Dawn</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://jmcph4.dev/assets/css/main.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div id="masthead-container" class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <!-- Masthead -->
+                        <div id="masthead">
+                            <h1>Disciple of Dawn</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col">
+                        <!-- Main menu -->
+                        <nav class="navbar navbar-expand navbar-light bg-light">
+                            <div class="collapse navbar-collapse">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://jmcph4.dev">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://jmcph4.dev/posts">Posts</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://github.com/" target="_blank">GitHub</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </header>
+        
+        <!-- Main content -->
+        <div id="main-container" class="container">
+
+
+
+<label for="show">
+    <a class="post-special-link"><span>[BibTeX]</span></a>
+</label>
+<input type=radio id="show" name="group">
+<span class="bibtex-content">
+<pre>
+@online&#123;a-model-for-adtsMcPherson2017,
+    author=&#123;Jack McPherson&#125;,
+    date=&#123;2017-01-14&#125;,
+    title=&#123;A Model For ADTs&#125;,
+    url=&#123;https://jmcph4.dev/2017/01/14/a-model-for-adts.html&#125;,
+    urldate=&#123;2021-01-01&#125;,
+&#125;
+</pre>
+</span>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=en&u=https%3A%2F%2Fjmcph4.dev%2F2017%2F01%2F14%2Fa-model-for-adts.html" target="_blank" class="post-special-link">[Translate]</a>
+
+<a href="https://scholar.google.com/scholar?q=abstract data types+ADTs+algorithms+data structures+interface+" target="_blank" class="post-special-link">[Related]</a>
+
+
+
+<h1>A Model For ADTs</h1>
+<span class="post-author-byline">by Jack McPherson</span> | <span class="post-datetime">2017-01-14 00:00:00 +1000</span>
+
+<p>For the past month or so I have concerned myself with the study of Abstract Data Types (ADTs), particularly the precise, abstract mathematical definition of them. This post reflects the current culmination of my efforts.</p>
+
+<h2>Introduction</h2>
+<p>Abstract Data Types (ADTs) are mathematical objects somewhat congruent to algebraic structures in pure mathematics. We have a set of operations we can perform on a given ADT and a set of values it may take.</p>
+
+<p>For the purposes of my analysis, an axiom I have adopted is that <b>no ADT can be perfectly implemented in any computer programming language</b>. This is due to the inherent nature of real computers: i.e., they are error-prone. ADTs, like any mathematical objects, do not suffer from "errors" (imagine taking the logarithm of a negative number and the universe raising an exception).</p>
+
+<p>Despite this seemingly pessimistic outlook, we can implement ADTs effectively and quite closely to their mathematical definitions. Firstly, we require some way to understand and reason about ADTs in general. We require a <b>specification</b>.</p>
+
+<h2>Specification of ADTs</h2>
+<p>Above, I claimed that the formal mathematical definition of an ADT is a set of operations and a set of possible values, this is not as pragmatic as I would like. It is at this point that I started to devise a strategy for specifying ADTs in a more useful sense. We define the following characteristics of any general ADT:</p>
+
+<ul>
+    <li><p>Operations</p></li>
+    <ul>
+        <li><p>Unary</p></li>
+        <li><p>Binary</p></li>
+    </ul>
+    <li><p>Access</p></li>
+    <li><p>Size</p></li>
+    <li><p>Equality<sup>&#10013;</sup></p></li>
+    <li><p>Membership</p></li>
+</ul>
+
+<p>These are charactertistics of all ADTs, not merely specific ones. Examples of such specifications are available as a <a href="https://gist.github.com/jmcph4/683238e6236ed0b5f90457f7eb8c767a" target="_blank" title="jmcph4/adt.md">Gist</a>.</p>
+
+<h2>Hierarchy of ADTs</h2>
+<p>It is well known that some ADTs are special cases of other, more general, ADTs. For instance, a binary tree is an ADT that is a special case of the (more general) tree ADT (also referred to as a \(k\)-ary tree with \(k=2\)). This becomes quite evident when specifying ADTs, as one finds themselves repeating themselves more and more. This is the motivation behind my ADT graph (not the ADT <b>called</b> a graph, but a graph <b>of</b> ADTs).</p>
+
+<p>Let us define a directed graph, \(G\), whose vertices are ADTs. An edge in \(G\) from a vertex \(u\) to a vertex \(v\) denotes that the ADT represented by \(v\) is a special case of the ADT represented by \(u\).</p>
+
+<img src="https://gist.githubusercontent.com/jmcph4/3a429b9478e9bdd7ed25cb3b6aa07acf/raw/bdf21f776de04cb54dea4d921a58a04b01e1f51e/ADT_graph_image.PNG" />
+
+<p>In some sense, the "most important" ADTs in \(G\) are those \(v\in G\) such that \(deg^{+}(v)=0\), as these are the ADTs which are the most general and thus all other ADTs can be derived. We will call the set of all such ADTs the set of <i>base ADTs</i>. In the current model, this set is: $$\{List, Hypergraph, Stack, Queue, Multimap, Multiset\}$$</p>
+
+<h2>Conclusion</h2>
+<p>The description of the model I have given here is by no means complete. For example, the ADT graph does not have every ADT in existence in it (nor can it, in practice). Despite this incompleteness, I hope that I have provided sufficient description to enable the model to be well-understood and useful. Of course, I am open to change and growth of the model.</p>
+
+<hr>
+<p><sup>&#10013;</sup>By "equality", I mean mathematical equality. In a concrete implementation, this is actually closer to isomorphism, as in computer programming, two things are "equal" when they are in fact the same thing.</p>
+
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <hr>
+            Copyright &copy; Jack McPherson 2020.
+        </footer>
+        
+        <!-- MathJax support -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
+
+
+
