@@ -12,7 +12,7 @@
     <body>
         <!-- Header -->
         <header>
-            <div id="masthead-container" class="container-fluid">
+            <div id="masthead-container" class="container">
                 <div class="row no-gutters">
                     <div class="col">
                         <!-- Masthead -->
@@ -21,44 +21,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="row no-gutters">
-                    <div class="col">
-                        <!-- Main menu -->
-                        <nav class="navbar navbar-expand navbar-light bg-light">
-                            <div class="collapse navbar-collapse">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://jmcph4.dev">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://jmcph4.dev/posts.html">Posts</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://github.com/" target="_blank">GitHub</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
+            </div>
+            <!-- Main menu -->
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <div class="collapse navbar-collapse">
+                    <div class="container">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev/posts.html">Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/" target="_blank">GitHub</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <hr>
+            </nav>
         </header>
-        
+
         <!-- Main content -->
         <div id="main-container" class="container">
 
 
 
-<div class="row">
+<div class="row no-gutters">
     <h1>Posts</h1>
 </div>
 
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-xs-12">
             <h2><a class="post-link" href="/2020/05/16/pre-print-saturday-2.html">Pre-Print Saturday #2: 16 May 2020</a></h2>
             <p class="post-exerpt"><ul>
@@ -114,7 +111,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-xs-12">
             <h2><a class="post-link" href="/2020/05/09/pre-print-saturday-1.html">Pre-Print Saturday #1: 9 May 2020</a></h2>
             <p class="post-exerpt"><ul>
@@ -151,7 +148,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-xs-12">
             <h2><a class="post-link" href="/2018/02/07/crackerjack-introduction-and-puzzle-a-solution.html">Crackerjack - Introduction and Puzzle A Solution</a></h2>
             <p class="post-exerpt">As part of my journey into reverse engineering, I decided to create my own set of crackmes called Crackerjack. I will be doing a series of articles detailing solutions to each puzzle</p>
@@ -159,7 +156,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-xs-12">
             <h2><a class="post-link" href="/2018/02/02/identifying-loops-while-reverse-engineering.html">Identifying Loops While Reverse Engineering</a></h2>
             <p class="post-exerpt">Often when reverse engineering a binary, it's useful to have some patterns to help identify higher-level code constructs. This post goes through the general structure of various loops in a higher-level language (C) and their corresponding assembly format</p>
@@ -167,7 +164,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-xs-12">
             <h2><a class="post-link" href="/2018/01/19/writing-a-simple-fuzzer-in-python.html">Writing a Simple Fuzzer in Python</a></h2>
             <p class="post-exerpt">I have had an interest in fuzzing for quite some time now, and had decided that it was time to start writing some of my own (very basic) fuzzing tools. In this post, we'll step through some of the basic things we might expect from a fuzzer and how we might achieve them using some of the code I have written</p>
@@ -175,7 +172,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-xs-12">
             <h2><a class="post-link" href="/2017/01/14/a-model-for-adts.html">A Model For ADTs</a></h2>
             <p class="post-exerpt"><p>For the past month or so I have concerned myself with the study of Abstract Data Types (ADTs), particularly the precise, abstract mathematical definition of them. This post reflects the current culmination of my efforts.</p></p>
@@ -191,9 +188,11 @@
         <!-- Footer -->
         <footer>
             <hr>
-            Copyright &copy; Jack McPherson 2020.
+            <div class="container">
+                Copyright &copy; Jack McPherson 2020.
+            </div>
         </footer>
-        
+
         <!-- MathJax support -->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

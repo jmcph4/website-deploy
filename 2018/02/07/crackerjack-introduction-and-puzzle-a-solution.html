@@ -12,7 +12,7 @@
     <body>
         <!-- Header -->
         <header>
-            <div id="masthead-container" class="container-fluid">
+            <div id="masthead-container" class="container">
                 <div class="row no-gutters">
                     <div class="col">
                         <!-- Masthead -->
@@ -21,33 +21,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="row no-gutters">
-                    <div class="col">
-                        <!-- Main menu -->
-                        <nav class="navbar navbar-expand navbar-light bg-light">
-                            <div class="collapse navbar-collapse">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://jmcph4.dev">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://jmcph4.dev/posts.html">Posts</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://github.com/" target="_blank">GitHub</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
+            </div>
+            <!-- Main menu -->
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <div class="collapse navbar-collapse">
+                    <div class="container">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev/posts.html">Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/" target="_blank">GitHub</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <hr>
+            </nav>
         </header>
-        
+
         <!-- Main content -->
         <div id="main-container" class="container">
 
@@ -236,9 +233,11 @@ __cxa_finalize@@GLIBC_2.2.5
         <!-- Footer -->
         <footer>
             <hr>
-            Copyright &copy; Jack McPherson 2020.
+            <div class="container">
+                Copyright &copy; Jack McPherson 2020.
+            </div>
         </footer>
-        
+
         <!-- MathJax support -->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
