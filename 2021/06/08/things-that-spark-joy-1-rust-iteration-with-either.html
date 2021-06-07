@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-AU">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Things That Spark Joy #1: Rust Iteration with Either | Disciple of Dawn</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://jmcph4.dev/assets/css/main.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div id="masthead-container" class="container">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <!-- Masthead -->
+                        <div id="masthead">
+                            <h1>Disciple of Dawn</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main menu -->
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <div class="collapse navbar-collapse">
+                    <div class="container">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev/posts.html">Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev/work.html">Work</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/jmcph4" target="_blank">GitHub</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <div id="main-container" class="container">
+
+
+
+<label for="show">
+    <a class="post-special-link"><span>[BibTeX]</span></a>
+</label>
+<input type=radio id="show" name="group">
+<span class="bibtex-content">
+<pre>
+@online&#123;things-that-spark-joMcPherson2021,
+    author=&#123;Jack McPherson&#125;,
+    date=&#123;2021-06-08&#125;,
+    title=&#123;Things That Spark Joy #1: Rust Iteration with Either&#125;,
+    url=&#123;https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html&#125;,
+    urldate=&#123;2021-06-08&#125;,
+&#125;
+</pre>
+</span>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=en&u=https%3A%2F%2Fjmcph4.dev%2F2021%2F06%2F08%2Fthings-that-spark-joy-1-rust-iteration-with-either.html" target="_blank" class="post-special-link">[Translate]</a>
+
+<a href="https://scholar.google.com/scholar?q=" target="_blank" class="post-special-link">[Related]</a>
+
+
+
+<h1>Things That Spark Joy #1: Rust Iteration with Either</h1>
+<span class="post-author-byline">by Jack McPherson</span> | <span class="post-datetime">2021-06-08 19:00:00 +1000</span>
+
+<p>Consider a situation where you want to iterate over a list (or some other iterable data structure), but in a programmatically-defined direction. Specifically, in a direction defined by some enumerated type.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">Flag</span> <span class="p">{</span>
+    <span class="n">A</span><span class="p">,</span>
+    <span class="n">B</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="n">flag</span><span class="p">:</span> <span class="n">Flag</span> <span class="o">=</span> <span class="cm">/* ... */</span>
+
+<span class="k">match</span> <span class="n">flag</span> <span class="p">{</span>
+    <span class="nn">Flag</span><span class="p">::</span><span class="n">A</span> <span class="k">=&gt;</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">elem</span> <span class="n">in</span> <span class="n">list</span><span class="nf">.iter</span><span class="p">()</span> <span class="p">{</span>
+            <span class="cm">/* lots of complicated logic... */</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nn">Flag</span><span class="p">::</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">elem</span> <span class="n">in</span> <span class="n">list</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.rev</span><span class="p">()</span> <span class="p">{</span>
+            <span class="cm">/* the same complicated logic... */</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The most obvious issue here is that this code isn’t very <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>. Imagine that the bodies of each <code class="highlighter-rouge">for</code> loop are both:</p>
+
+<ul>
+  <li>identical</li>
+  <li>very lengthy (a problem in its own right, but a separate one)</li>
+</ul>
+
+<p>So, let’s refactor our current code by extracting the iterator out. This way we won’t have duplicate loops.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">my_iter</span> <span class="o">=</span> <span class="k">match</span> <span class="n">flag</span> <span class="p">{</span>
+    <span class="nn">Flag</span><span class="p">::</span><span class="n">A</span> <span class="k">=&gt;</span> <span class="n">list</span><span class="nf">.iter</span><span class="p">(),</span>
+    <span class="nn">Flag</span><span class="p">::</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="n">list</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.rev</span><span class="p">(),</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">elem</span> <span class="n">in</span> <span class="n">my_iter</span> <span class="p">{</span>
+    <span class="cm">/* lots of complicated logic... */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This makes sense, right? Well, the issue here is that this won’t compile! Note that the arms of our <code class="highlighter-rouge">match</code> have differing types, which is not allowed (hint: think about what type you’d assign <code class="highlighter-rouge">my_iter</code> if you were to annotate this explicitly).</p>
+
+<p>This is where <a href="https://docs.rs/itertools/0.10.0/itertools/enum.Either.html"><code class="highlighter-rouge">itertools::Either</code></a> saves the day (my Rust code is starting to become a Haskell DSL at this point). Now, we can write this:</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">my_iter</span> <span class="o">=</span> <span class="k">match</span> <span class="n">flag</span> <span class="p">{</span>
+    <span class="nn">Flag</span><span class="p">::</span><span class="n">A</span> <span class="k">=&gt;</span> <span class="nn">Either</span><span class="p">::</span><span class="nf">Left</span><span class="p">(</span><span class="n">list</span><span class="nf">.iter</span><span class="p">()),</span>
+    <span class="nn">Flag</span><span class="p">::</span><span class="n">B</span> <span class="k">=&gt;</span> <span class="nn">Either</span><span class="p">::</span><span class="nf">Right</span><span class="p">(</span><span class="n">list</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.rev</span><span class="p">()),</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">elem</span> <span class="n">in</span> <span class="n">my_iter</span> <span class="p">{</span>
+    <span class="cm">/* lots of complicated logic... */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This code <em>does</em> compile and works as you’d expect.</p>
+
+<p>Still, perhaps you’re having the same thoughts that I had when I wrote this and had everything magically work: how does the compiler know that <code class="highlighter-rouge">my_iter</code> implements <code class="highlighter-rouge">IntoIter</code>? Well, this is where Rust’s extremely expressive type system truly shines.</p>
+
+<p>If we consult the <a href="https://docs.rs/either/1.6.1/src/either/lib.rs.html#391">actual code</a> for <code class="highlighter-rouge">itertools::Either</code>:</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/// Convert the inner value to an iterator.</span>
+<span class="c">///</span>
+<span class="c">/// ```</span>
+<span class="c">/// use either::*;</span>
+<span class="c">///</span>
+<span class="c">/// let left: Either&lt;_, Vec&lt;u32&gt;&gt; = Left(vec![1, 2, 3, 4, 5]);</span>
+<span class="c">/// let mut right: Either&lt;Vec&lt;u32&gt;, _&gt; = Right(vec![]);</span>
+<span class="c">/// right.extend(left.into_iter());</span>
+<span class="c">/// assert_eq!(right, Right(vec![1, 2, 3, 4, 5]));</span>
+<span class="c">/// ```</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">into_iter</span><span class="p">(</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Either</span><span class="o">&lt;</span><span class="nn">L</span><span class="p">::</span><span class="n">IntoIter</span><span class="p">,</span> <span class="nn">R</span><span class="p">::</span><span class="n">IntoIter</span><span class="o">&gt;</span>
+<span class="k">where</span>
+    <span class="n">L</span><span class="p">:</span> <span class="n">IntoIterator</span><span class="p">,</span>
+    <span class="n">R</span><span class="p">:</span> <span class="n">IntoIterator</span><span class="o">&lt;</span><span class="n">Item</span> <span class="o">=</span> <span class="nn">L</span><span class="p">::</span><span class="n">Item</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">{</span>
+    <span class="k">match</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="nf">Left</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Left</span><span class="p">(</span><span class="n">l</span><span class="nf">.into_iter</span><span class="p">()),</span>
+        <span class="nf">Right</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Right</span><span class="p">(</span><span class="n">r</span><span class="nf">.into_iter</span><span class="p">()),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Isn’t it an object of pure beauty? Once again, you can always just pattern match your way to victory.</p>
+
+
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <hr>
+            <div class="container">
+                Copyright &copy; Jack McPherson 2020.
+            </div>
+        </footer>
+
+        <!-- MathJax support -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
+
+
+

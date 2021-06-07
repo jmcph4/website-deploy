@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jmcph4.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jmcph4.dev/" rel="alternate" type="text/html" /><updated>2021-06-08T09:50:56+10:00</updated><id>https://jmcph4.dev/feed.xml</id><title type="html">Disciple of Dawn</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Pre-Print Saturday #2: 16 May 2020</title><link href="https://jmcph4.dev/2020/05/16/pre-print-saturday-2.html" rel="alternate" type="text/html" title="Pre-Print Saturday #2: 16 May 2020" /><published>2020-05-16T10:45:00+10:00</published><updated>2020-05-16T10:45:00+10:00</updated><id>https://jmcph4.dev/2020/05/16/pre-print-saturday-2</id><content type="html" xml:base="https://jmcph4.dev/2020/05/16/pre-print-saturday-2.html">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jmcph4.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jmcph4.dev/" rel="alternate" type="text/html" /><updated>2021-06-08T09:52:09+10:00</updated><id>https://jmcph4.dev/feed.xml</id><title type="html">Disciple of Dawn</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Things That Spark Joy #1: Rust Iteration with Either</title><link href="https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html" rel="alternate" type="text/html" title="Things That Spark Joy #1: Rust Iteration with Either" /><published>2021-06-08T19:00:00+10:00</published><updated>2021-06-08T19:00:00+10:00</updated><id>https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either</id><content type="html" xml:base="https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html">&lt;p&gt;Consider a situation where you want to iterate over a list (or some other iterable data structure), but in a programmatically-defined direction. Specifically, in a direction defined by some enumerated type.&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;cm&quot;&gt;/* lots of complicated logic... */&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.rev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;cm&quot;&gt;/* the same complicated logic... */&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The most obvious issue here is that this code isn’t very &lt;a href=&quot;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&quot;&gt;DRY&lt;/a&gt;. Imagine that the bodies of each &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop are both:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;identical&lt;/li&gt;
+  &lt;li&gt;very lengthy (a problem in its own right, but a separate one)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, let’s refactor our current code by extracting the iterator out. This way we won’t have duplicate loops.&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_iter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.rev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_iter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/* lots of complicated logic... */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This makes sense, right? Well, the issue here is that this won’t compile! Note that the arms of our &lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt; have differing types, which is not allowed (hint: think about what type you’d assign &lt;code class=&quot;highlighter-rouge&quot;&gt;my_iter&lt;/code&gt; if you were to annotate this explicitly).&lt;/p&gt;
+
+&lt;p&gt;This is where &lt;a href=&quot;https://docs.rs/itertools/0.10.0/itertools/enum.Either.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;itertools::Either&lt;/code&gt;&lt;/a&gt; saves the day (my Rust code is starting to become a Haskell DSL at this point). Now, we can write this:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_iter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Either&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+    &lt;span class=&quot;nn&quot;&gt;Flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Either&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.rev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_iter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/* lots of complicated logic... */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This code &lt;em&gt;does&lt;/em&gt; compile and works as you’d expect.&lt;/p&gt;
+
+&lt;p&gt;Still, perhaps you’re having the same thoughts that I had when I wrote this and had everything magically work: how does the compiler know that &lt;code class=&quot;highlighter-rouge&quot;&gt;my_iter&lt;/code&gt; implements &lt;code class=&quot;highlighter-rouge&quot;&gt;IntoIter&lt;/code&gt;? Well, this is where Rust’s extremely expressive type system truly shines.&lt;/p&gt;
+
+&lt;p&gt;If we consult the &lt;a href=&quot;https://docs.rs/either/1.6.1/src/either/lib.rs.html#391&quot;&gt;actual code&lt;/a&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;itertools::Either&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/// Convert the inner value to an iterator.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;///&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// ```&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// use either::*;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;///&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// let left: Either&amp;lt;_, Vec&amp;lt;u32&amp;gt;&amp;gt; = Left(vec![1, 2, 3, 4, 5]);&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// let mut right: Either&amp;lt;Vec&amp;lt;u32&amp;gt;, _&amp;gt; = Right(vec![]);&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// right.extend(left.into_iter());&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// assert_eq!(right, Right(vec![1, 2, 3, 4, 5]));&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;/// ```&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;into_iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Either&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntoIter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntoIter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IntoIterator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IntoIterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.into_iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;Right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.into_iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Isn’t it an object of pure beauty? Once again, you can always just pattern match your way to victory.&lt;/p&gt;</content><author><name></name></author><summary type="html">Consider a situation where you want to iterate over a list (or some other iterable data structure), but in a programmatically-defined direction. Specifically, in a direction defined by some enumerated type.</summary></entry><entry><title type="html">Pre-Print Saturday #2: 16 May 2020</title><link href="https://jmcph4.dev/2020/05/16/pre-print-saturday-2.html" rel="alternate" type="text/html" title="Pre-Print Saturday #2: 16 May 2020" /><published>2020-05-16T10:45:00+10:00</published><updated>2020-05-16T10:45:00+10:00</updated><id>https://jmcph4.dev/2020/05/16/pre-print-saturday-2</id><content type="html" xml:base="https://jmcph4.dev/2020/05/16/pre-print-saturday-2.html">&lt;ul&gt;
     &lt;li&gt;
         &lt;a href=&quot;https://arxiv.org/abs/2005.06093&quot; target=&quot;_blank&quot;&gt;&lt;cite&gt;Stabilizing Congestion in Decentralized Record-Keepers&lt;/cite&gt;&lt;/a&gt;&lt;a href=&quot;https://semion.io/doc/stabilizing-congestion-in-decentralized-record-keepers&quot; target=&quot;_blank&quot;&gt;[Semion.io]&lt;/a&gt;&lt;br&gt;
         &lt;p&gt;The authors present a proposal for a distributed ledger system and accompanying payment system that leverages recent advancements in both PoW consensus and formal verification. The authors also present a formal economic model of their protocol design. Of particular interest is that their proposed system reaches stability in the absence of block rewards - relying solely on transaction fees to maintain consensus.&lt;/p&gt;
