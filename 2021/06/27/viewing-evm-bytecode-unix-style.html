@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en-AU">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Viewing EVM Bytecode Unix Style | Disciple of Dawn</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://jmcph4.dev/assets/css/main.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div id="masthead-container" class="container">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <!-- Masthead -->
+                        <div id="masthead">
+                            <h1>Disciple of Dawn</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main menu -->
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <div class="collapse navbar-collapse">
+                    <div class="container">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev/posts.html">Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://jmcph4.dev/work.html">Work</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/jmcph4" target="_blank">GitHub</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/jack-mcpherson-410b2a134" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <div id="main-container" class="container">
+
+
+
+<label for="show">
+    <a class="post-special-link"><span>[BibTeX]</span></a>
+</label>
+<input type=radio id="show" name="group">
+<span class="bibtex-content">
+<pre>
+@online&#123;viewing-evm-bytecodeMcPherson2021,
+    author=&#123;Jack McPherson&#125;,
+    date=&#123;2021-06-27&#125;,
+    title=&#123;Viewing EVM Bytecode Unix Style&#125;,
+    url=&#123;https://jmcph4.dev/2021/06/27/viewing-evm-bytecode-unix-style.html&#125;,
+    urldate=&#123;2021-06-27&#125;,
+&#125;
+</pre>
+</span>
+
+<a href="https://translate.google.com/translate?sl=auto&tl=en&u=https%3A%2F%2Fjmcph4.dev%2F2021%2F06%2F27%2Fviewing-evm-bytecode-unix-style.html" target="_blank" class="post-special-link">[Translate]</a>
+
+<a href="https://scholar.google.com/scholar?q=unix+ethereum+tooling+evm+bytecode+smart contracts+" target="_blank" class="post-special-link">[Related]</a>
+
+
+
+<h1>Viewing EVM Bytecode Unix Style</h1>
+<span class="post-author-byline">by Jack McPherson</span> | <span class="post-datetime">2021-06-27 04:00:00 +1000</span>
+
+<p>Often in blockchain development (specifically smart contract work, in this case), tooling tends to converge on easy-to-use web-based interfaces. This makes a lot of sense and the current offerings are certainly vast and effective. However, if you’re reading this, you likely already prefer a clean and minimalist interface for <em>all</em> of your computing – not just development work.</p>
+
+<p>Additionally, viewing the bytecode of a deployed contract is an absolutely <em>critical</em> task when it comes to interacting with the Ethereum blockchain (and any other SC-capable blockchain for that matter). It’s how developers can debug, verify, and learn about either their own protocols or other ones. It’s how security researchers can inspect, audit, and exploit protocols. It’s how users (admittedly, particularly technical ones) can perform their own due diligence on protocols. Across the board, it’s an innately vital activity.</p>
+
+<p>So, wouldn’t it be nice if this was easy to do all from the comfort of your own shell? There are certainly multiple ways to achieve this, and today I’ll be showing you two. I particularly like the first as I hacked it together in probably 30 seconds, but the second is less commands.</p>
+
+<h1 id="method-1-no-smart-contract-development-tools">Method 1: No Smart Contract Development Tools</h1>
+
+<p>Firstly, we’re going to need to make sure we have our software installed:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install curl jq
+$ pip3 install pyevmasm 
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">curl(1)</code> is pretty obvious due to its ubiquity. <a href="https://stedolan.github.io/jq/"><code class="highlighter-rouge">jq(1)</code></a> is like <code class="highlighter-rouge">sed(1)</code> but for JSON – it allows us to manipulate JSON data in an ergonomic and minimalistic way.</p>
+
+<p>Now we’re ready to go! Conceptually, how this is going to work is:</p>
+
+<ol>
+  <li>Call the <code class="highlighter-rouge">eth_getCode</code> RPC on a (synced) Eth1 node</li>
+  <li>Grab the JSON response</li>
+  <li>Extract the <code class="highlighter-rouge">result</code> field from this JSON object</li>
+  <li>Pipe it into <code class="highlighter-rouge">evmasm</code></li>
+  <li>Dump the disassembly to the shell!</li>
+</ol>
+
+<p>Here’s what it looks like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_getCode","params": ["[ADDRESS]", "latest"],"id":1}' [ENDPOINT] 2&gt; /dev/null | jq -r ".result" | evmasm -d 
+</code></pre></div></div>
+
+<p>Where,</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ADDRESS</code> is the Ethereum address of the smart contract in question</li>
+  <li><code class="highlighter-rouge">ENDPOINT</code> is the HTTP address of the Ethereum node we’ll be using</li>
+</ul>
+
+<p>For an actual, working example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{"jsonrpc":"2.0","method":"eth_getCode","params": ["0xE95782d36be250139027908c86648b01118eB407", "latest"],"id":1}'</span> https://kovan.infura.io/v3/946670af70a14439978fce09a4f8e8e9 | jq <span class="nt">-r</span> <span class="s2">".result"</span> | evmasm <span class="nt">-d</span>
+00000000: PUSH20 0xe95782d36be250139027908c86648b01118eb407
+00000015: ADDRESS
+00000016: EQ
+00000017: PUSH1 0x80
+00000019: PUSH1 0x40
+0000001b: MSTORE
+0000001c: PUSH1 0x0
+0000001e: DUP1
+0000001f: REVERT
+00000020: INVALID
+00000021: LOG2
+00000022: PUSH5 0x6970667358
+00000028: INVALID
+00000029: SLT
+0000002a: SHA3
+0000002b: INVALID
+0000002c: PUSH10 0x7773d4bdfecf23ca8adc
+00000037: PUSH17 0x88470d453cee95f328a24d6a5bc0d9532a
+00000049: GAS
+0000004a: INVALID
+0000004b: PUSH5 0x736f6c6343
+00000051: STOP
+00000052: ADDMOD
+00000053: STOP
+00000054: STOP
+00000055: CALLER
+</code></pre></div></div>
+
+<p>Voilà!</p>
+
+<h1 id="method-2-dapp-tools">Method 2: Dapp Tools</h1>
+
+<p>This method leverages the mighty <a href="https://dapp.tools">dapp.tools</a> to grab our code for us. Let’s grab our prerequisites.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install curl
+$ curl -L https://nixos.org/nix/install | sh
+$ curl https://dapp.tools/install | sh
+$ pip3 install pyevmasm 
+</code></pre></div></div>
+
+<p>While I don’t enjoy <code class="highlighter-rouge">curl</code>ing arbitrary remote code and piping it straight into a shell, these are the official recommendations for <em>both</em> pieces of software. As always, do your own research!</p>
+
+<p>The strategy here is:</p>
+
+<ol>
+  <li>Use <code class="highlighter-rouge">seth</code> to handle our RPC interaction (this still necessitates a synced Eth1 node, of course)</li>
+  <li>Pipe the retrieved bytecode into <code class="highlighter-rouge">evmasm</code></li>
+</ol>
+
+<p>I told you it was less steps!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ETH_RPC_URL=[ENDPOINT] seth code [ADDRESS] | evmasm -d
+</code></pre></div></div>
+
+<p>Once again, a concrete example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ETH_RPC_URL=https://kovan.infura.io/v3/946670af70a14439978fce09a4f8e8e9 seth code 0xE95782d36be250139027908c86648b01118eB407 | evmasm -d
+00000000: PUSH20 0xe95782d36be250139027908c86648b01118eb407
+00000015: ADDRESS
+00000016: EQ
+00000017: PUSH1 0x80
+00000019: PUSH1 0x40
+0000001b: MSTORE
+0000001c: PUSH1 0x0
+0000001e: DUP1
+0000001f: REVERT
+00000020: INVALID
+00000021: LOG2
+00000022: PUSH5 0x6970667358
+00000028: INVALID
+00000029: SLT
+0000002a: SHA3
+0000002b: INVALID
+0000002c: PUSH10 0x7773d4bdfecf23ca8adc
+00000037: PUSH17 0x88470d453cee95f328a24d6a5bc0d9532a
+00000049: GAS
+0000004a: INVALID
+0000004b: PUSH5 0x736f6c6343
+00000051: STOP
+00000052: ADDMOD
+00000053: STOP
+00000054: STOP
+00000055: CALLER
+</code></pre></div></div>
+
+
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <hr>
+            <div class="container">
+                Copyright &copy; Jack McPherson 2020-2021.
+            </div>
+        </footer>
+
+        <!-- MathJax support -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
+
+
+

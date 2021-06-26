@@ -1,4 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jmcph4.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jmcph4.dev/" rel="alternate" type="text/html" /><updated>2021-06-27T00:20:32+10:00</updated><id>https://jmcph4.dev/feed.xml</id><title type="html">Disciple of Dawn</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Things That Spark Joy #1: Rust Iteration with Either</title><link href="https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html" rel="alternate" type="text/html" title="Things That Spark Joy #1: Rust Iteration with Either" /><published>2021-06-08T19:00:00+10:00</published><updated>2021-06-08T19:00:00+10:00</updated><id>https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either</id><content type="html" xml:base="https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html">&lt;p&gt;Consider a situation where you want to iterate over a list (or some other iterable data structure), but in a programmatically-defined direction. Specifically, in a direction defined by some enumerated type.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://jmcph4.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jmcph4.dev/" rel="alternate" type="text/html" /><updated>2021-06-27T00:21:03+10:00</updated><id>https://jmcph4.dev/feed.xml</id><title type="html">Disciple of Dawn</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Viewing EVM Bytecode Unix Style</title><link href="https://jmcph4.dev/2021/06/27/viewing-evm-bytecode-unix-style.html" rel="alternate" type="text/html" title="Viewing EVM Bytecode Unix Style" /><published>2021-06-27T04:00:00+10:00</published><updated>2021-06-27T04:00:00+10:00</updated><id>https://jmcph4.dev/2021/06/27/viewing-evm-bytecode-unix-style</id><content type="html" xml:base="https://jmcph4.dev/2021/06/27/viewing-evm-bytecode-unix-style.html">&lt;p&gt;Often in blockchain development (specifically smart contract work, in this case), tooling tends to converge on easy-to-use web-based interfaces. This makes a lot of sense and the current offerings are certainly vast and effective. However, if you’re reading this, you likely already prefer a clean and minimalist interface for &lt;em&gt;all&lt;/em&gt; of your computing – not just development work.&lt;/p&gt;
+
+&lt;p&gt;Additionally, viewing the bytecode of a deployed contract is an absolutely &lt;em&gt;critical&lt;/em&gt; task when it comes to interacting with the Ethereum blockchain (and any other SC-capable blockchain for that matter). It’s how developers can debug, verify, and learn about either their own protocols or other ones. It’s how security researchers can inspect, audit, and exploit protocols. It’s how users (admittedly, particularly technical ones) can perform their own due diligence on protocols. Across the board, it’s an innately vital activity.&lt;/p&gt;
+
+&lt;p&gt;So, wouldn’t it be nice if this was easy to do all from the comfort of your own shell? There are certainly multiple ways to achieve this, and today I’ll be showing you two. I particularly like the first as I hacked it together in probably 30 seconds, but the second is less commands.&lt;/p&gt;
+
+&lt;h1 id=&quot;method-1-no-smart-contract-development-tools&quot;&gt;Method 1: No Smart Contract Development Tools&lt;/h1&gt;
+
+&lt;p&gt;Firstly, we’re going to need to make sure we have our software installed:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install curl jq
+$ pip3 install pyevmasm 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl(1)&lt;/code&gt; is pretty obvious due to its ubiquity. &lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jq(1)&lt;/code&gt;&lt;/a&gt; is like &lt;code class=&quot;highlighter-rouge&quot;&gt;sed(1)&lt;/code&gt; but for JSON – it allows us to manipulate JSON data in an ergonomic and minimalistic way.&lt;/p&gt;
+
+&lt;p&gt;Now we’re ready to go! Conceptually, how this is going to work is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Call the &lt;code class=&quot;highlighter-rouge&quot;&gt;eth_getCode&lt;/code&gt; RPC on a (synced) Eth1 node&lt;/li&gt;
+  &lt;li&gt;Grab the JSON response&lt;/li&gt;
+  &lt;li&gt;Extract the &lt;code class=&quot;highlighter-rouge&quot;&gt;result&lt;/code&gt; field from this JSON object&lt;/li&gt;
+  &lt;li&gt;Pipe it into &lt;code class=&quot;highlighter-rouge&quot;&gt;evmasm&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Dump the disassembly to the shell!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here’s what it looks like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getCode&quot;,&quot;params&quot;: [&quot;[ADDRESS]&quot;, &quot;latest&quot;],&quot;id&quot;:1}' [ENDPOINT] 2&amp;gt; /dev/null | jq -r &quot;.result&quot; | evmasm -d 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ADDRESS&lt;/code&gt; is the Ethereum address of the smart contract in question&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ENDPOINT&lt;/code&gt; is the HTTP address of the Ethereum node we’ll be using&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For an actual, working example:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Content-Type: application/json&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getCode&quot;,&quot;params&quot;: [&quot;0xE95782d36be250139027908c86648b01118eB407&quot;, &quot;latest&quot;],&quot;id&quot;:1}'&lt;/span&gt; https://kovan.infura.io/v3/946670af70a14439978fce09a4f8e8e9 | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.result&quot;&lt;/span&gt; | evmasm &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+00000000: PUSH20 0xe95782d36be250139027908c86648b01118eb407
+00000015: ADDRESS
+00000016: EQ
+00000017: PUSH1 0x80
+00000019: PUSH1 0x40
+0000001b: MSTORE
+0000001c: PUSH1 0x0
+0000001e: DUP1
+0000001f: REVERT
+00000020: INVALID
+00000021: LOG2
+00000022: PUSH5 0x6970667358
+00000028: INVALID
+00000029: SLT
+0000002a: SHA3
+0000002b: INVALID
+0000002c: PUSH10 0x7773d4bdfecf23ca8adc
+00000037: PUSH17 0x88470d453cee95f328a24d6a5bc0d9532a
+00000049: GAS
+0000004a: INVALID
+0000004b: PUSH5 0x736f6c6343
+00000051: STOP
+00000052: ADDMOD
+00000053: STOP
+00000054: STOP
+00000055: CALLER
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Voilà!&lt;/p&gt;
+
+&lt;h1 id=&quot;method-2-dapp-tools&quot;&gt;Method 2: Dapp Tools&lt;/h1&gt;
+
+&lt;p&gt;This method leverages the mighty &lt;a href=&quot;https://dapp.tools&quot;&gt;dapp.tools&lt;/a&gt; to grab our code for us. Let’s grab our prerequisites.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install curl
+$ curl -L https://nixos.org/nix/install | sh
+$ curl https://dapp.tools/install | sh
+$ pip3 install pyevmasm 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;While I don’t enjoy &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt;ing arbitrary remote code and piping it straight into a shell, these are the official recommendations for &lt;em&gt;both&lt;/em&gt; pieces of software. As always, do your own research!&lt;/p&gt;
+
+&lt;p&gt;The strategy here is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;seth&lt;/code&gt; to handle our RPC interaction (this still necessitates a synced Eth1 node, of course)&lt;/li&gt;
+  &lt;li&gt;Pipe the retrieved bytecode into &lt;code class=&quot;highlighter-rouge&quot;&gt;evmasm&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I told you it was less steps!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ETH_RPC_URL=[ENDPOINT] seth code [ADDRESS] | evmasm -d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once again, a concrete example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ETH_RPC_URL=https://kovan.infura.io/v3/946670af70a14439978fce09a4f8e8e9 seth code 0xE95782d36be250139027908c86648b01118eB407 | evmasm -d
+00000000: PUSH20 0xe95782d36be250139027908c86648b01118eb407
+00000015: ADDRESS
+00000016: EQ
+00000017: PUSH1 0x80
+00000019: PUSH1 0x40
+0000001b: MSTORE
+0000001c: PUSH1 0x0
+0000001e: DUP1
+0000001f: REVERT
+00000020: INVALID
+00000021: LOG2
+00000022: PUSH5 0x6970667358
+00000028: INVALID
+00000029: SLT
+0000002a: SHA3
+0000002b: INVALID
+0000002c: PUSH10 0x7773d4bdfecf23ca8adc
+00000037: PUSH17 0x88470d453cee95f328a24d6a5bc0d9532a
+00000049: GAS
+0000004a: INVALID
+0000004b: PUSH5 0x736f6c6343
+00000051: STOP
+00000052: ADDMOD
+00000053: STOP
+00000054: STOP
+00000055: CALLER
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="unix" /><category term="ethereum" /><category term="tooling" /><category term="evm" /><category term="bytecode" /><category term="smart contracts" /><summary type="html">Often in blockchain development (specifically smart contract work, in this case), tooling tends to converge on easy-to-use web-based interfaces. This makes a lot of sense and the current offerings are certainly vast and effective. However, if you’re reading this, you likely already prefer a clean and minimalist interface for all of your computing – not just development work.</summary></entry><entry><title type="html">Things That Spark Joy #1: Rust Iteration with Either</title><link href="https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html" rel="alternate" type="text/html" title="Things That Spark Joy #1: Rust Iteration with Either" /><published>2021-06-08T19:00:00+10:00</published><updated>2021-06-08T19:00:00+10:00</updated><id>https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either</id><content type="html" xml:base="https://jmcph4.dev/2021/06/08/things-that-spark-joy-1-rust-iteration-with-either.html">&lt;p&gt;Consider a situation where you want to iterate over a list (or some other iterable data structure), but in a programmatically-defined direction. Specifically, in a direction defined by some enumerated type.&lt;/p&gt;
 
 &lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
